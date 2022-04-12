@@ -8,6 +8,7 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 	list1=[]
 
 
+
 	# for each customer
 	for i in range(1009):
 		dictrow = {}
