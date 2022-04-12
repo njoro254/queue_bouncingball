@@ -25,7 +25,17 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 
 
 		# they left after a random service time service may take upto 15 minutes
-		depart_time = start_service + r(ser1,ser2)
+		# service_times = r(ser1,ser2)
+
+		# linear congruential function
+		# service_times = (r(0,1000)*ser1 + ser2)%ser2
+
+		service_times =((r(10000,10000000)%r(ser1,ser2)) -(r(10000,10000000)%r(ser1,ser2)))%ser2
+
+		depart_time = start_service + service_times
+		
+
+
 		# dictrow['depart_time'] = depart_time
 
 		# the difference between the time waited before the last consumer left
@@ -45,7 +55,10 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 		list1.append(dictrow)
 
 		# calls come every 10 minutes
-		arrival_time += r(arr1,arr2)
+		# arrival_time += r(arr1,arr2)
+
+		# linear congruential function
+		arrival_time = (r(0,1000)*arr1 + arr2)%arr2
 
 
 

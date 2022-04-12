@@ -1,6 +1,6 @@
-# importing movie py libraries
-from moviepy.editor import VideoClip
-from moviepy.video.io.bindings import mplfig_to_npimage
+# # importing movie py libraries
+# from moviepy.editor import VideoClip
+# from moviepy.video.io.bindings import mplfig_to_npimage
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -12,14 +12,14 @@ import numpy as np
 # Acceleration due to gravity, m.s-2.
 g = 9.81
 # The maximum x-range of ball's trajectory to plot.
-XMAX = 5
+XMAX = 20
 # The coefficient of restitution for bounces (-v_up/v_down).
-cor = 0.65
+cor = 0.9
 # The time step for the animation.
-dt = 0.005
+dt = 0.01
 
 # Initial position and velocity vectors.
-x0, y0 = 0, 4
+x0, y0 = 0, 15
 vx0, vy0 = 1, 0
 
 def get_pos(t=0):
