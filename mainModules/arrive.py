@@ -27,9 +27,8 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 		# they left after a random service time service may take upto 15 minutes
 		# service_times = r(ser1,ser2)
 
-		# linear congruential function
-		# service_times = (r(0,1000)*ser1 + ser2)%ser2
-
+		# combined  congruential function
+		# (randomized large number modulus random number in between estimated minimum and estimated maximum service times)minus(randomized large number modulus random number in between estimated minimum and estimated maximum service times))modules estimated maximum service time
 		service_times =((r(10000,10000000)%r(ser1,ser2)) -(r(10000,10000000)%r(ser1,ser2)))%ser2
 
 		depart_time = start_service + service_times
@@ -58,6 +57,7 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 		# arrival_time += r(arr1,arr2)
 
 		# linear congruential function
+		# form of random_value = (randomized large number * estimated minimum arrival time + estimated maximum arrival time) modulues maximum estimated arrival time
 		arrival_time = (r(0,1000)*arr1 + arr2)%arr2
 
 
@@ -85,11 +85,3 @@ def simulate_queue(arr1,arr2,ser1,ser2):
 
 	return average_idle_time, average_service_time
 
-
-
-# 	f.write('arrival_time, idle_time, start_service, service_time, depart_time')
-
-# with open ('waitlist.csv', 'a') as f:
-# 	for items in list1:
-# 		rows = str(items['arrival_time'])+","+str(items['idle_time'])+","+str(items['start_service'])+","+str(items['service_time'])+","+str(items['depart_time'])
-# 		f.write(rows)

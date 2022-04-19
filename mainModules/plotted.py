@@ -14,7 +14,7 @@ g = 9.81
 # The maximum x-range of ball's trajectory to plot.
 XMAX = 20
 # The coefficient of restitution for bounces (-v_up/v_down).
-cor = 0.9
+cor = 0.8
 # The time step for the animation.
 dt = 0.01
 
